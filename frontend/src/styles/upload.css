@@ -1,0 +1,222 @@
+/* Upload & Convert Styles */
+.upload-page-container {
+  display: flex;
+  height: calc(100vh - var(--topbar-height));
+  width: 100%;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.upload-controls-sidebar {
+  width: 340px;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 20px;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-section:last-child {
+  border-bottom: none;
+}
+
+.sidebar-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+}
+
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.slider-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.mode-selector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.mode-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.mode-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.mode-btn.active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.calib-box {
+  background: var(--bg-panel);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.calib-input {
+  width: 60px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+/* Main Area */
+.upload-main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #14100c;
+  overflow: hidden;
+}
+
+.upload-dropzone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  margin: 32px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-xl);
+  background: rgba(18, 25, 35, 0.4);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.upload-dropzone:hover {
+  border-color: var(--accent);
+  background: rgba(210, 166, 121, 0.05);
+}
+
+.dropzone-icon {
+  color: var(--accent);
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.dropzone-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.dropzone-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+.canvas-viewport-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.canvas-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.canvas-scroll-wrapper {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #080c10;
+}
+
+.upload-canvas {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  border-radius: var(--radius-sm);
+  cursor: crosshair;
+}
+
+/* Responsive Design for Upload & Convert */
+@media (max-width: 1024px) {
+  .upload-page-container {
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - var(--topbar-height));
+    overflow-y: auto;
+  }
+
+  .upload-controls-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .upload-main-area {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .upload-controls-sidebar {
+    padding: 16px;
+  }
+
+  .mode-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}

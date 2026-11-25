@@ -1,0 +1,1043 @@
+/* ══════════════════════════════════════════════════════════════
+   ZUKE 3D WORKSPACE – Warm Architectural Beige & Espresso Brown
+   ══════════════════════════════════════════════════════════════ */
+
+/* Root App Layout */
+.ws3d-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: #14100c;
+  color: #faf6f0;
+  overflow: hidden;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ═══════════════════════════════════════════
+   1. TOP TOOLBAR
+   ═══════════════════════════════════════════ */
+.ws3d-top-toolbar {
+  height: 48px;
+  background: #1d1712;
+  border-bottom: 1px solid rgba(210, 166, 121, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 20;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.ws3d-tb-section {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ws3d-brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #d2a679;
+  padding: 4px 10px;
+  background: rgba(210, 166, 121, 0.12);
+  border: 1px solid rgba(210, 166, 121, 0.28);
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.ws3d-brand-icon {
+  color: #d2a679;
+}
+
+.ws3d-tb-sep {
+  width: 1px;
+  height: 20px;
+  background: rgba(210, 166, 121, 0.15);
+  margin: 0 4px;
+}
+
+.ws3d-tb-btn {
+  background: transparent;
+  color: #cdc0b0;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ws3d-tb-btn:hover {
+  background: rgba(210, 166, 121, 0.08);
+  color: #faf6f0;
+}
+
+.ws3d-tb-btn.active {
+  background: #d2a679;
+  color: #14100c;
+  font-weight: 700;
+  border-color: #d2a679;
+}
+
+.ws3d-tb-btn.export-btn {
+  background: rgba(210, 166, 121, 0.14);
+  border: 1px solid rgba(210, 166, 121, 0.35);
+  color: #d2a679;
+  font-weight: 600;
+}
+
+.ws3d-tb-btn.export-btn:hover {
+  background: #d2a679;
+  color: #14100c;
+}
+
+.ws3d-tb-icon-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #cdc0b0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ws3d-tb-icon-btn:hover:not(:disabled) {
+  background: rgba(210, 166, 121, 0.08);
+  color: #faf6f0;
+}
+
+.ws3d-tb-icon-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.ws3d-tb-icon-btn.active {
+  background: rgba(210, 166, 121, 0.16);
+  color: #d2a679;
+  border-color: rgba(210, 166, 121, 0.35);
+}
+
+/* ═══════════════════════════════════════════
+   2. MAIN 3-COLUMN WORKSPACE BODY
+   ═══════════════════════════════════════════ */
+.ws3d-main-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Panels (Left & Right) */
+.ws3d-panel {
+  width: 340px;
+  background: #1d1712;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ws3d-panel-left {
+  border-right: 1px solid rgba(210, 166, 121, 0.18);
+}
+
+.ws3d-panel-right {
+  border-left: 1px solid rgba(210, 166, 121, 0.18);
+}
+
+.ws3d-panel-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(210, 166, 121, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #17120e;
+}
+
+.ws3d-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #faf6f0;
+}
+
+.ws3d-gold-text {
+  color: #d2a679;
+}
+
+.ws3d-pill-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: rgba(210, 166, 121, 0.15);
+  color: #d2a679;
+}
+
+.ws3d-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(210, 166, 121, 0.25) transparent;
+}
+
+.ws3d-panel-content::-webkit-scrollbar { width: 5px; }
+.ws3d-panel-content::-webkit-scrollbar-thumb { background: rgba(210, 166, 121, 0.25); border-radius: 3px; }
+
+/* ─── LEFT PANEL: AI NATURAL LANGUAGE EDITOR ─── */
+.ws3d-prompt-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ws3d-input-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #cdc0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ws3d-prompt-textarea {
+  width: 100%;
+  background: #110d0a;
+  border: 1px solid rgba(210, 166, 121, 0.28);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #faf6f0;
+  font-size: 12px;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.ws3d-prompt-textarea:focus {
+  border-color: #d2a679;
+  box-shadow: 0 0 0 2px rgba(210, 166, 121, 0.2);
+}
+
+.ws3d-prompt-hint {
+  font-size: 10px;
+  color: #938373;
+}
+
+.ws3d-apply-prompt-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 16px;
+  background: linear-gradient(135deg, #d2a679, #ad8051);
+  border: none;
+  border-radius: 8px;
+  color: #14100c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(210, 166, 121, 0.35);
+  transition: all 0.2s ease;
+}
+
+.ws3d-apply-prompt-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e0ba91, #be8f5d);
+  box-shadow: 0 4px 16px rgba(210, 166, 121, 0.5);
+  transform: translateY(-1px);
+}
+
+.ws3d-apply-prompt-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ws3d-spin {
+  animation: ws3d-spin 1s linear infinite;
+}
+
+@keyframes ws3d-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Feedback Banner */
+.ws3d-feedback-banner {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  align-items: flex-start;
+}
+
+.ws3d-feedback-banner.success {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+.ws3d-feedback-banner.error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.ws3d-feedback-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ws3d-feedback-text {
+  font-weight: 600;
+}
+
+.ws3d-feedback-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ws3d-change-chip {
+  background: rgba(210, 166, 121, 0.15);
+  color: #d2a679;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+}
+
+/* Quick Modifiers */
+.ws3d-modifiers-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(210, 166, 121, 0.12);
+}
+
+.ws3d-section-heading {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #d2a679;
+}
+
+.ws3d-section-sub {
+  font-size: 10px;
+  color: #938373;
+  margin: 0;
+}
+
+.ws3d-modifiers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.ws3d-modifier-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid rgba(210, 166, 121, 0.14);
+  background: #110d0a;
+  color: #cdc0b0;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.ws3d-modifier-chip:hover:not(:disabled) {
+  border-color: #d2a679;
+  background: rgba(210, 166, 121, 0.12);
+  color: #faf6f0;
+  transform: translateY(-1px);
+}
+
+.ws3d-modifier-chip.chip-add svg {
+  color: #4ade80;
+}
+
+.ws3d-modifier-chip.chip-remove svg {
+  color: #f87171;
+}
+
+/* Live Context Card */
+.ws3d-context-card {
+  background: #110d0a;
+  border: 1px solid rgba(210, 166, 121, 0.14);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ws3d-context-header {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #cdc0b0;
+  border-bottom: 1px solid rgba(210, 166, 121, 0.12);
+  padding-bottom: 4px;
+}
+
+.ws3d-context-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.ws3d-ctx-row {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  color: #938373;
+}
+
+.ws3d-ctx-row strong {
+  color: #faf6f0;
+  font-size: 11px;
+  margin-top: 1px;
+}
+
+/* ─── CENTER: 3D VIEWPORT ─── */
+.ws3d-viewport-center {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  background: #14100c;
+  overflow: hidden;
+}
+
+.ws3d-viewport-center canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  outline: none;
+}
+
+.ws3d-engine-badge {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  background: rgba(29, 23, 18, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(210, 166, 121, 0.25);
+  pointer-events: none;
+}
+
+.ws3d-engine-name {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #d2a679;
+}
+
+.ws3d-engine-spec {
+  font-size: 9px;
+  color: #cdc0b0;
+}
+
+/* ─── RIGHT PANEL: HIERARCHY & INSPECTOR ─── */
+.ws3d-panel-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(210, 166, 121, 0.18);
+  background: #17120e;
+  flex-shrink: 0;
+}
+
+.ws3d-ptab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #938373;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ws3d-ptab:hover {
+  color: #cdc0b0;
+  background: rgba(210, 166, 121, 0.05);
+}
+
+.ws3d-ptab.active {
+  color: #d2a679;
+  border-bottom-color: #d2a679;
+  background: rgba(210, 166, 121, 0.08);
+}
+
+/* Hierarchy Tree */
+.ws3d-hierarchy-view {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ws3d-hierarchy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #cdc0b0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(210, 166, 121, 0.12);
+}
+
+.ws3d-badge {
+  background: rgba(210, 166, 121, 0.16);
+  color: #d2a679;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.ws3d-tree-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ws3d-tree-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #cdc0b0;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.ws3d-tree-row:hover {
+  background: rgba(210, 166, 121, 0.08);
+  color: #faf6f0;
+}
+
+.ws3d-tree-row.selected {
+  background: rgba(210, 166, 121, 0.2);
+  border: 1px solid rgba(210, 166, 121, 0.4);
+  color: #d2a679;
+  font-weight: 600;
+}
+
+.ws3d-collapse-btn {
+  background: transparent;
+  border: none;
+  color: #938373;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.ws3d-mesh-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d2a679;
+  flex-shrink: 0;
+}
+
+.ws3d-tree-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ws3d-child-count {
+  font-size: 10px;
+  color: #938373;
+}
+
+.ws3d-tree-tools {
+  display: flex;
+  gap: 3px;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.ws3d-tree-row:hover .ws3d-tree-tools {
+  opacity: 1;
+}
+
+.ws3d-tool-btn {
+  background: transparent;
+  border: none;
+  color: #cdc0b0;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.ws3d-tool-btn:hover {
+  background: rgba(210, 166, 121, 0.15);
+  color: #faf6f0;
+}
+
+.ws3d-tool-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+/* Inspector */
+.ws3d-inspector-view {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ws3d-empty-inspector {
+  padding: 32px 16px;
+  text-align: center;
+  color: #938373;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ws3d-empty-cube {
+  color: rgba(210, 166, 121, 0.4);
+}
+
+.ws3d-empty-inspector h4 {
+  margin: 0;
+  color: #cdc0b0;
+  font-size: 13px;
+}
+
+.ws3d-empty-inspector p {
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ws3d-insp-card {
+  background: #110d0a;
+  border: 1px solid rgba(210, 166, 121, 0.22);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.ws3d-insp-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #d2a679;
+}
+
+.ws3d-insp-subtitle {
+  font-size: 10px;
+  color: #938373;
+}
+
+.ws3d-insp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ws3d-insp-sec-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #cdc0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ws3d-axis-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+}
+
+.ws3d-axis-field {
+  display: flex;
+  align-items: center;
+  background: #110d0a;
+  border: 1px solid rgba(210, 166, 121, 0.14);
+  border-radius: 5px;
+  padding: 2px 4px;
+}
+
+.ws3d-axis-tag {
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+.tag-x { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+.tag-y { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+.tag-z { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+
+.ws3d-axis-field input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #faf6f0;
+  font-size: 11px;
+  outline: none;
+}
+
+.ws3d-dims-row {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: #cdc0b0;
+  background: #110d0a;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.ws3d-color-picker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #cdc0b0;
+}
+
+.ws3d-color-picker-row input[type="color"] {
+  border: 1px solid rgba(210, 166, 121, 0.25);
+  border-radius: 4px;
+  background: transparent;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.ws3d-slider-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ws3d-slider-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #cdc0b0;
+}
+
+.ws3d-slider-field input[type="range"] {
+  width: 100%;
+  accent-color: #d2a679;
+  cursor: pointer;
+}
+
+.ws3d-preset-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ws3d-pchip {
+  padding: 4px 8px;
+  font-size: 10px;
+  background: #110d0a;
+  border: 1px solid rgba(210, 166, 121, 0.16);
+  border-radius: 4px;
+  color: #cdc0b0;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.ws3d-pchip:hover {
+  border-color: #d2a679;
+  color: #faf6f0;
+}
+
+.ws3d-insp-btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.ws3d-insp-save-btn {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #d2a679;
+  color: #14100c;
+  font-size: 11px;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ws3d-insp-reset-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 10px;
+  background: rgba(210, 166, 121, 0.08);
+  color: #cdc0b0;
+  font-size: 11px;
+  border: 1px solid rgba(210, 166, 121, 0.18);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ws3d-mini-feedback {
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ws3d-mini-feedback.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.ws3d-mini-feedback.info {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+/* ═══════════════════════════════════════════
+   3. BOTTOM AREA: STATUS & HISTORY DRAWER
+   ═══════════════════════════════════════════ */
+.ws3d-bottom-bar {
+  height: 34px;
+  background: #17120e;
+  border-top: 1px solid rgba(210, 166, 121, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 30;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+.ws3d-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ws3d-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+.ws3d-status-text {
+  color: #cdc0b0;
+  font-weight: 500;
+}
+
+.ws3d-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ws3d-history-count {
+  color: #938373;
+  font-size: 10px;
+}
+
+.ws3d-history-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid rgba(210, 166, 121, 0.18);
+  color: #cdc0b0;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.ws3d-history-toggle-btn:hover,
+.ws3d-history-toggle-btn.active {
+  background: rgba(210, 166, 121, 0.16);
+  border-color: #d2a679;
+  color: #d2a679;
+}
+
+/* Drawer Popup */
+.ws3d-history-drawer {
+  position: absolute;
+  bottom: 34px;
+  left: 0;
+  right: 0;
+  max-height: 220px;
+  background: #18130e;
+  border-top: 1px solid rgba(210, 166, 121, 0.28);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  z-index: 25;
+}
+
+.ws3d-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #110d0a;
+  border-bottom: 1px solid rgba(210, 166, 121, 0.12);
+}
+
+.ws3d-drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #d2a679;
+  text-transform: uppercase;
+}
+
+.ws3d-drawer-close {
+  background: transparent;
+  border: none;
+  color: #cdc0b0;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.ws3d-drawer-close:hover {
+  color: #faf6f0;
+}
+
+.ws3d-drawer-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ws3d-drawer-empty {
+  color: #938373;
+  font-size: 11px;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.ws3d-timeline-item {
+  display: flex;
+  gap: 12px;
+  padding: 6px 10px;
+  background: #110d0a;
+  border: 1px solid rgba(210, 166, 121, 0.1);
+  border-radius: 6px;
+  align-items: center;
+}
+
+.ws3d-timeline-time {
+  font-size: 10px;
+  color: #938373;
+  white-space: nowrap;
+}
+
+.ws3d-timeline-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ws3d-timeline-prompt {
+  font-size: 11px;
+  color: #faf6f0;
+  font-weight: 500;
+}
+
+.ws3d-timeline-changes {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.ws3d-timeline-tag {
+  font-size: 9px;
+  background: rgba(210, 166, 121, 0.16);
+  color: #d2a679;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
